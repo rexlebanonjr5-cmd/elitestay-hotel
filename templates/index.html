@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1>Book your stay with comfort, security and ease.</h1>
+      <p>
+        Elitestay Hotel provides quality accommodation, conference support,
+        restaurant services, and secure digital booking for guests.
+      </p>
+      <div class="hero-actions">
+        <a href="{{ url_for('rooms') }}" class="btn btn-primary">View Rooms</a>
+        <a href="{{ url_for('booking') }}" class="btn btn-secondary">Book Now</a>
+      </div>
+    </div>
+    <div class="card quick-info">
+      <h3>Why Choose Elitestay?</h3>
+      <ul>
+        <li>24/7 security</li>
+        <li>Comfortable standard and executive rooms</li>
+        <li>Conference and event booking</li>
+        <li>Fast and simple online reservation</li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}

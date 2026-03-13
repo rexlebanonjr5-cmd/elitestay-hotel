@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+  <div class="container">
+    <div class="section-head">
+      <h2>Available Room Options</h2>
+      <p>Choose a room that matches your budget and comfort needs.</p>
+    </div>
+    <div class="rooms">
+      {% for room in rooms %}
+      <div class="card room-card">
+        <img src="{{ room.image }}" alt="{{ room.name }}">
+        <h3>{{ room.name }}</h3>
+        <p>{{ room.description }}</p>
+        <div class="price">{{ room.price }}</div>
+        <a href="{{ url_for('booking') }}" class="btn btn-primary">Book This</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

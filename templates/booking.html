@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+  <div class="container booking-wrapper">
+    <div class="section-head">
+      <h2>Book a Room</h2>
+      <p>Complete the form below to request your reservation.</p>
+    </div>
+
+    <form method="POST" class="booking-form card">
+      <input type="text" name="full_name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number" required>
+
+      <select name="room_type" required>
+        <option value="">Select Room Type</option>
+        <option>Standard Room</option>
+        <option>Executive Room</option>
+        <option>Conference Booking</option>
+      </select>
+
+      <input type="date" name="check_in" required>
+      <input type="date" name="check_out" required>
+      <input type="number" name="guests" min="1" max="10" placeholder="Number of Guests" required>
+      <textarea name="special_request" placeholder="Special Requests (Optional)"></textarea>
+
+      <button type="submit" class="btn btn-primary">Submit Booking</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

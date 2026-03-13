@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+  <div class="container">
+    <div class="card success-card">
+      <h2>Booking Received</h2>
+      <p>Thank you, {{ name }}.</p>
+      <p>Your request for a <strong>{{ room_type }}</strong> has been submitted successfully.</p>
+      <a href="{{ url_for('home') }}" class="btn btn-primary">Return Home</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

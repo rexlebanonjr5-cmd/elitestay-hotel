@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<section>
+  <div class="container">
+    <div class="section-head">
+      <h2>Admin Dashboard</h2>
+      <p>View all hotel booking requests.</p>
+    </div>
+    <div class="card admin-summary">
+      <h3>Total Bookings:
+        {{ total_bookings }}</h3>
+    </div>
+
+    <div class="card">
+      {% if bookings %}
+      <div style="overflow-x:auto;">
+        <table class="booking-table">
+          <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Room Type</th>
+              <th>Check-In</th>
+              <th>Check-Out</th>
+              <th>Guests</th>
+              <th>Special Request</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for booking in bookings %}
+            <tr>
+              <td>{{ booking[0] }}</td>
+              <td>{{ booking[1] }}</td>
+              <td>{{ booking[2] }}</td>
+              <td>{{ booking[3] }}</td>
+              <td>{{ booking[4] }}</td>
+              <td>{{ booking[5] }}</td>
+              <td>{{ booking[6] }}</td>
+              <td>{{ booking[7] }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <p>No bookings yet.</p>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}
